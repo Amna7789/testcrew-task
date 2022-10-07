@@ -24,7 +24,7 @@ public class AutoSuggestDropDown {
     }
 
     @Test
-    void testCase1() throws Exception {
+    void testCase8() throws Exception {
         String URL = "https://www.google.com/webhp?hl=en";
 
         driver.get(URL);
