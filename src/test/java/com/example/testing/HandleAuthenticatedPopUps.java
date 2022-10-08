@@ -18,8 +18,10 @@ public class HandleAuthenticatedPopUps {
         String a = "admin";
         String s = "https://" + a + ":" + a + "@" +
                 "the-internet.herokuapp.com/basic_auth";
-        driver.get(s);
+
         Thread.sleep(5000L);
+
+        driver.get(s);
         driver.close();
     }
 
