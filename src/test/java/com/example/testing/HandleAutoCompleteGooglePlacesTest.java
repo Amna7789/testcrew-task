@@ -1,11 +1,13 @@
 package com.example.testing;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.asynchttpclient.util.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -20,7 +22,7 @@ public class HandleAutoCompleteGooglePlacesTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL);
-        
+
         driver.findElement(By.id("details-button")).sendKeys("Advanced");
         List<WebElement> list = driver.findElements(By.xpath("//*[@class='secondary-button small-link']"));
         driver.findElement(By.id("details-button")).click();
@@ -36,7 +38,8 @@ public class HandleAutoCompleteGooglePlacesTest {
         driver.findElement(By.linkText("LIVE POSTING")).click();
         driver.findElement(By.id("autocomplete")).sendKeys("Toronto");
         driver.findElement(By.id("autocomplete")).sendKeys(Keys.DOWN,"OH,USA");
-
+        String city = "Toronto,OH,USA";
+        Assert.assertEquals("Toronto,OH,USA",city);
         Thread.sleep(5000L);
         driver.close();
     }
