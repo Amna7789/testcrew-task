@@ -33,7 +33,9 @@ public class TestDropDownSorting {
 
         driver.findElement(By.linkText("LIVE POSTING")).click();
         
-        for (WebElement webElement : list2){
+        List<WebElement> list3 = driver.findElements(By.xpath("//*[@class='clearfix']"));
+
+        for (WebElement webElement : list3){
             System.out.println(webElement.getText());
         }
         Thread.sleep(5000L);
