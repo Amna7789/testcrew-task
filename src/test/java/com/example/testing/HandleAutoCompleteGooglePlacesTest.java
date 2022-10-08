@@ -28,12 +28,13 @@ public class HandleAutoCompleteGooglePlacesTest {
         driver.findElement(By.id("details-button")).sendKeys("Hide advanced");
         List<WebElement> list1 = driver.findElements(By.xpath("//*[@class='secondary-button small-link']"));
         driver.findElement(By.id("details-button")).click();
-        driver.findElement(By.className("//*[@class='secondary-button small-link']")).submit();
 
-        driver.findElement(By.id("proceed-link")).click();
         driver.findElement(By.id("proceed-link")).sendKeys("Proceed to www.twoplugs.com (unsafe)");
-        driver.findElement(By.className("//*[@class='small-link']")).submit();
-        //driver.findElement(By.linkText("Live Posting")).click();
+        List<WebElement> list2 = driver.findElements(By.xpath("//*[@class='small-link']"));
+        driver.findElement(By.id("proceed-link")).click();
+
+        List<WebElement> list3 = driver.findElements(By.xpath("//*[@class='toggle-nav']"));
+        driver.findElement(By.linkText("Live Posting")).click();
         Thread.sleep(5000L);
         driver.close();
     }
