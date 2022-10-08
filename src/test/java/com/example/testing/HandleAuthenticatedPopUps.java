@@ -22,7 +22,7 @@ public class HandleAuthenticatedPopUps extends AbstractApplicationTest {
         Thread.sleep(5000L);
 
         driver.get(s);
-        driver.close();
+    
     }
 
 }
