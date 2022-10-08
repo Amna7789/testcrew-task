@@ -14,14 +14,24 @@ public class BootStrapDropDown extends AbstractApplicationTest {
         driver.get(URL);
         Thread.sleep(5000L);
         //select Product Type
-        List<WebElement> selectedList = driver.findElements(By.xpath("//h3[contains(., 'Select Product Type')]"));
-        Assert.assertNotEquals(0,selectedList.size(),"Result doesn't have Product Type");
-        selectedList.get(0).click();
+        List<WebElement> selectedListProductType = driver.findElements(By.xpath("//*[@class='btn-primary dropdown-toggle btn-block']"));
+        Assert.assertNotEquals(0,selectedListProductType.size(),"Result doesn't have Product Type");
+        selectedListProductType.get(0).click();
         //capture all items to list
-        List<WebElement> dropDownList = driver.findElements(By.xpath("//*[@class = 'sbct']"));
-        for (WebElement webElement : dropDownList){
+        List<WebElement> dropDownListProductType = driver.findElements(By.xpath("//*[@class = 'dropdown1 dropdown-menu']"));
+        for (WebElement webElement : dropDownListProductType){
             System.out.println(webElement.getText());
         }
+        //select Product
+        List<WebElement> selectedListProduct = driver.findElements(By.xpath("//*[@class='btn-primary dropdown-toggle btn-block']"));
+        Assert.assertNotEquals(0,selectedListProduct.size(),"Result doesn't have Product");
+        selectedListProduct.get(0).click();
+        //capture all items to list but it doesn't have drop down menu
+        List<WebElement> dropDownListProduct = driver.findElements(By.xpath("//*[@class = 'dropdown1 dropdown-menu']"));
+        for (WebElement webElement : dropDownListProduct){
+            System.out.println(webElement.getText());
+        }
+
     }
 
 }
