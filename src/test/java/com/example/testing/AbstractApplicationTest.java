@@ -28,7 +28,8 @@ public class  AbstractApplicationTest {
         driver.quit();
     }
 
-    public static void takeSnapShot(WebDriver webdriver,String fileName) throws Exception{
+    public void takeSnapShot(WebDriver webdriver,String fileName) throws Exception{
+        String fileNameWithPath = basePath + fileName;
         //Convert web driver object to TakeScreenshot
         TakesScreenshot scrShot =((TakesScreenshot)webdriver);
 
