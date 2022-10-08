@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class HandleAuthenticatedPopUps {
+public class HandleAuthenticatedPopUps extends AbstractApplicationTest {
     String URL = "https://the-internet.herokuapp.com/basic_auth";
 
     @Test
