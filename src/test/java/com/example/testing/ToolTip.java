@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class ToolTip {
+public class ToolTip extends AbstractApplicationTest{
     String URL = "https://jqueryui.com/tooltip/";
 
     @Test
@@ -71,9 +71,7 @@ public class ToolTip {
         } // Close the main windo//
         driver.close();
     */
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
         driver.get(URL);
 
         System.out.println("Tooltip web Page Displayed");
@@ -92,7 +90,5 @@ public class ToolTip {
             System.out.println("Fail : Tooltip NOT matching expected value");
         }
 
-        // Close the main window
-        driver.close();
     }
-    }
+}
