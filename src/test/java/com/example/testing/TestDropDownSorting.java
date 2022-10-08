@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class TestDropDownSorting {
+public class TestDropDownSorting extends AbstractApplicationTest {
     String URL = "https://www.twoplugs.com/";
 
     @Test
@@ -31,7 +31,7 @@ public class TestDropDownSorting {
         }
 
         Thread.sleep(5000L);
-        driver.close();
+
     }
 
 }
