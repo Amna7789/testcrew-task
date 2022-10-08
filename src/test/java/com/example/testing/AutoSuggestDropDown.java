@@ -1,16 +1,8 @@
 package com.example.testing;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
-import org.asynchttpclient.util.Assertions;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.io.File;
 import java.util.List;
 
 public class AutoSuggestDropDown extends AbstractApplicationTest {
