@@ -33,23 +33,6 @@ public class DatePickerTest extends AbstractApplicationTest {
 
         driver.findElements(By.xpath("//*[@class='ui-state-default']")).get(day-1).click();
 
-        System.out.println("Amna is working");
-    }
-
-    private Date getDate() throws ParseException {
-        Calendar cal = Calendar.getInstance();
-        cal.set(2005, 5, 30);
-        Date d = cal.getTime();
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String ddate = formatter.format(d);
-        Date date = formatter.parse("30/6/2005");
-       /* String splitter[] = date.split("-");
-        String month_year = splitter[1];
-        String day = splitter[0];
-        System.out.println(month_year);
-        System.out.println(day);*/
-        System.out.println("Date: " + date);
-        return d;
+        takeSnapShot(driver, "datePickerTest.jpg");
     }
 }
