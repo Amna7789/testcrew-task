@@ -4,11 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 public class DatePickerTest extends AbstractApplicationTest {
 
     String URL = "https://www.dummyticket.com/dummy-ticket-for-visa-application/";
