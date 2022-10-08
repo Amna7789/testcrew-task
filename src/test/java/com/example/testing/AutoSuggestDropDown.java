@@ -15,14 +15,6 @@ import java.util.List;
 
 public class AutoSuggestDropDown extends AbstractApplicationTest {
 
-    WebDriver driver;
-
-    @BeforeTest
-    void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
-
     @Test
     void testCase8() throws Exception {
         String URL = "https://www.google.com/webhp?hl=en";
@@ -51,11 +43,6 @@ public class AutoSuggestDropDown extends AbstractApplicationTest {
         takeSnapShot(driver, "dropdown.jpg");
     }
 
-    @AfterTest
-    void closeBrowser() throws InterruptedException {
-        Thread.sleep(2000L);
-      
-    }
 
 
 }
