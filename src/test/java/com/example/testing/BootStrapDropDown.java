@@ -10,14 +10,11 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class BootStrapDropDown {
+public class BootStrapDropDown extends AbstractApplicationTest {
     String URL = "https://www.hdfcbank.com/";
 
     @Test
     void testCase5() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get(URL);
         Thread.sleep(5000L);
         //select Product Type
@@ -29,8 +26,6 @@ public class BootStrapDropDown {
         for (WebElement webElement : dropDownList){
             System.out.println(webElement.getText());
         }
-        driver.close();
-
     }
 
 }
