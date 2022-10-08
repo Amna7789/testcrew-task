@@ -37,7 +37,7 @@ public class  AbstractApplicationTest {
         File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 
         //Move image file to new destination
-        File DestFile=new File(fileName);
+        File DestFile=new File(fileNameWithPath);
 
         //Copy file at destination
         FileUtils.copyFile(SrcFile, DestFile);
