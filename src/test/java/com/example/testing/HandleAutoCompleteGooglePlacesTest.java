@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class HandleAutoCompleteGooglePlacesTest extends AbstractApplicationTest{
 
     String URL = "https://www.twoplugs.com/";
