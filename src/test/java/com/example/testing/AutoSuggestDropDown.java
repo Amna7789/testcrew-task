@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.util.List;
 
-public class AutoSuggestDropDown {
+public class AutoSuggestDropDown extends AbstractApplicationTest {
 
     WebDriver driver;
 
@@ -48,33 +48,14 @@ public class AutoSuggestDropDown {
 
         selectedList.get(0).click();
 
-        takeSnapShot(driver, ".\\screenshot\\suggestDD.jpg");
+        takeSnapShot(driver, "dropdown.jpg");
     }
 
     @AfterTest
     void closeBrowser() throws InterruptedException {
         Thread.sleep(2000L);
-        driver.close();
+      
     }
 
-    public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
-
-        //Convert web driver object to TakeScreenshot
-
-        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
-
-        //Call getScreenshotAs method to create image file
-
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-
-        //Move image file to new destination
-
-        File DestFile=new File(fileWithPath);
-
-        //Copy file at destination
-
-        FileUtils.copyFile(SrcFile, DestFile);
-
-    }
 
 }
