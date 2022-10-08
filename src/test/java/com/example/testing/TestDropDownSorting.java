@@ -32,6 +32,10 @@ public class TestDropDownSorting {
         driver.findElement(By.id("proceed-link")).click();
 
         driver.findElement(By.linkText("LIVE POSTING")).click();
+        
+        for (WebElement webElement : list2){
+            System.out.println(webElement.getText());
+        }
         Thread.sleep(5000L);
         driver.close();
     }
