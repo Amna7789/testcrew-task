@@ -19,7 +19,7 @@ public class  AbstractApplicationTest {
     @AfterTest
     void cleanup() throws InterruptedException {
         Thread.sleep(2000L);
-        driver.close();
+        driver.quit();
     }
 
 }
