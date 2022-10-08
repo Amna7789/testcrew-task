@@ -19,25 +19,17 @@ public class TestDropDownSorting {
         driver.manage().window().maximize();
         driver.get(URL);
 
-        driver.findElement(By.id("details-button")).sendKeys("Advanced");
-        List<WebElement> list = driver.findElements(By.xpath("//*[@class='secondary-button small-link']"));
         driver.findElement(By.id("details-button")).click();
-
-        driver.findElement(By.id("details-button")).sendKeys("Hide advanced");
-        List<WebElement> list1 = driver.findElements(By.xpath("//*[@class='secondary-button small-link']"));
-        driver.findElement(By.id("details-button")).click();
-
-        driver.findElement(By.id("proceed-link")).sendKeys("Proceed to www.twoplugs.com (unsafe)");
-        List<WebElement> list2 = driver.findElements(By.xpath("//*[@class='small-link']"));
         driver.findElement(By.id("proceed-link")).click();
 
         driver.findElement(By.linkText("LIVE POSTING")).click();
-        
+
         List<WebElement> list3 = driver.findElements(By.xpath("//*[@class='clearfix']"));
 
-        for (WebElement webElement : list3){
+        for (WebElement webElement : list3) {
             System.out.println(webElement.getText());
         }
+
         Thread.sleep(5000L);
         driver.close();
     }
