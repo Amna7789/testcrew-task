@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class ToolTip {
-    //String URL = "https://jqueryui.com/tooltip/";
+    String URL = "https://jqueryui.com/tooltip/";
 
     @Test
     void testCase1() throws InterruptedException {
@@ -47,7 +47,7 @@ public class ToolTip {
             System.out.println("Test Case Passed");
         }
         driver.close();*/
-
+/*
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -70,6 +70,29 @@ public class ToolTip {
         else{ System.out.println("Fail");
         } // Close the main windo//
         driver.close();
-    }
+    */
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(URL);
 
-}
+        System.out.println("Tooltip web Page Displayed");
+        // Get element for which we need to find tooltip
+        WebElement ageTextBox = driver.findElement(By.id("age"));
+
+        //Get title attribute value
+        String tooltipText = ageTextBox.getAttribute("title");
+
+        System.out.println("Retrieved tooltip text as :" + tooltipText);
+
+        //Verification if tooltip text is matching expected value
+        if (tooltipText.equalsIgnoreCase("We ask for your age only for statistical purposes.")) {
+            System.out.println("Pass : Tooltip matching expected value");
+        } else {
+            System.out.println("Fail : Tooltip NOT matching expected value");
+        }
+
+        // Close the main window
+        driver.close();
+    }
+    }
