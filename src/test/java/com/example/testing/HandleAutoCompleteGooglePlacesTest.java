@@ -32,9 +32,8 @@ public class HandleAutoCompleteGooglePlacesTest {
         driver.findElement(By.id("proceed-link")).sendKeys("Proceed to www.twoplugs.com (unsafe)");
         List<WebElement> list2 = driver.findElements(By.xpath("//*[@class='small-link']"));
         driver.findElement(By.id("proceed-link")).click();
-
-        List<WebElement> list3 = driver.findElements(By.xpath("//*[@class='toggle-nav']"));
-        driver.findElement(By.linkText("Live Posting")).click();
+        
+        driver.findElement(By.linkText("LIVE POSTING")).click();
         Thread.sleep(5000L);
         driver.close();
     }
