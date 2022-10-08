@@ -12,36 +12,24 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class HandleAutoCompleteGooglePlacesTest {
+public class HandleAutoCompleteGooglePlacesTest extends AbstractApplicationTest{
 
     String URL = "https://www.twoplugs.com/";
 
     @Test
     void testCase1() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get(URL);
 
-        driver.findElement(By.id("details-button")).sendKeys("Advanced");
-        List<WebElement> list = driver.findElements(By.xpath("//*[@class='secondary-button small-link']"));
         driver.findElement(By.id("details-button")).click();
-
-        driver.findElement(By.id("details-button")).sendKeys("Hide advanced");
-        List<WebElement> list1 = driver.findElements(By.xpath("//*[@class='secondary-button small-link']"));
-        driver.findElement(By.id("details-button")).click();
-
-        driver.findElement(By.id("proceed-link")).sendKeys("Proceed to www.twoplugs.com (unsafe)");
-        List<WebElement> list2 = driver.findElements(By.xpath("//*[@class='small-link']"));
         driver.findElement(By.id("proceed-link")).click();
-
         driver.findElement(By.linkText("LIVE POSTING")).click();
-        driver.findElement(By.id("autocomplete")).sendKeys("Toronto");
-        driver.findElement(By.id("autocomplete")).sendKeys(Keys.DOWN,"OH,USA");
-        String city = "Toronto,OH,USA";
-        Assert.assertEquals("Toronto,OH,USA",city);
-        Thread.sleep(5000L);
-        driver.close();
+
+        WebElement mapElement = driver.findElement(By.id("autocomplete"));
+        mapElement.sendKeys("Toronto");
+        mapElement.sendKeys(Keys.DOWN);
+        String city = mapElement.getAttribute("value");
+
+        Assert.assertEquals("Toronto OH,USA",city);
     }
 
 }
