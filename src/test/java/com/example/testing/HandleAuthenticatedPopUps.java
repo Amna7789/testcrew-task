@@ -12,10 +12,7 @@ public class HandleAuthenticatedPopUps extends AbstractApplicationTest {
         String s = "https://" + a + ":" + a + "@" +
                 "the-internet.herokuapp.com/basic_auth";
 
-        Thread.sleep(5000L);
-
         driver.get(s);
-    
     }
 
 }
